@@ -1,7 +1,7 @@
-# medicine_ml
+
 # 데이콘 신약개발 AI 경진대회
 
-**팀명:** AI Drug Developers (이주용, 박단영, 정지훈)
+**팀명:** 아경핀텍(이주용, 박단영)
 
 **주최:** 데이콘
 
@@ -36,40 +36,57 @@
   ```python
   train['num_rotatablebonds_log'] = np.log1p(train['num_rotatablebonds'])
   test['num_rotatablebonds_log'] = np.log1p(test['num_rotatablebonds'])
+  ```
 
-###preprocessing:
-  - name: "이상치 제거(Outlier Removal)"
-    description: "IQR 방법 등을 사용하여 이상치를 식별하고 제거"
-  - name: "박스-콕스 변환(Box-Cox Transformation)"
-    description: "로그 변환이 실패하는 경우에 유용"
-  - name: "정규화(Normalization)/표준화(Standardization)"
-    description: "각 피처의 스케일 차이로 인한 문제를 해결"
+- **이상치 제거(Outlier Removal):** IQR 방법 등을 사용하여 이상치를 식별하고 제거
+- **박스-콕스 변환(Box-Cox Transformation):** 로그 변환이 실패하는 경우에 유용
+- **정규화(Normalization)/표준화(Standardization):** 각 피처의 스케일 차이로 인한 문제를 해결
 
-###modeling:
-  **algorithms:**
-    - Gradient Boosting
-    - LightGBM
-    - XGBoost
-    - PyCaret을 사용한 다양한 모델 비교
-  **evaluation_methods:**
-    - "정확도, 정밀도, 재현율, F1 스코어"
-    - "혼동 행렬 분석"
-  **training_process:**
-    - "데이터 분할 (Train/Test Split)"
-    - "하이퍼파라미터 튜닝"
-    - "교차 검증 (Cross-validation)"
+---
 
-###results:
-  ***model_performance:***
-    - "각 모델의 정확도 및 F1 스코어 비교"
-    - "최적 모델 선택 및 튜닝 결과"
- *** insights:***
-    - "중요한 특징 및 변수 파악"
-    - "모델의 예측 성능에 영향을 미치는 요소 분석"
+## 모델링
+- **사용된 알고리즘:**
+  - Gradient Boosting
+  - LightGBM
+  - XGBoost
+  - PyCaret을 사용한 다양한 모델 비교
 
-###code_structure:
-  - "데이터 전처리: 데이터 로딩 및 전처리 과정"
-  - "EDA: 탐색적 데이터 분석 및 시각화"
-  - "모델링: 다양한 모델 학습 및 평가"
-  - "결과 분석: 최종 모델 성능 평가 및 인사이트 도출"
+- **평가 방법:**
+  - 정확도, 정밀도, 재현율, F1 스코어
+  - 혼동 행렬 분석
 
+- **모델 학습 과정:**
+  - 데이터 분할 (Train/Test Split)
+  - 하이퍼파라미터 튜닝
+  - 교차 검증 (Cross-validation)
+
+---
+
+## 주요 성과 및 결과
+- **모델 성능:**
+  - 각 모델의 정확도 및 F1 스코어 비교
+  - 최적 모델 선택 및 튜닝 결과
+
+- **주요 인사이트:**
+  - 중요한 특징 및 변수 파악
+  - 모델의 예측 성능에 영향을 미치는 요소 분석
+
+---
+
+## 코드 구조
+1. **데이터 전처리:** 데이터 로딩 및 전처리 과정
+2. **EDA:** 탐색적 데이터 분석 및 시각화
+3. **모델링:** 다양한 모델 학습 및 평가
+4. **결과 분석:** 최종 모델 성능 평가 및 인사이트 도출
+
+---
+
+## 개선 제안 및 아쉬운점
+- **모델 성능 개선을 위한 추가 데이터 수집:** 외부 데이터 소스를 활용하여 모델 성능을 향상시킬 수 있습니다.
+- **특징 엔지니어링:** 더 많은 파생 피처를 생성하여 모델의 예측 성능을 높일 수 있습니다.
+- **하이퍼파라미터 튜닝:** 다양한 하이퍼파라미터 튜닝 기법을 사용하여 최적의 모델을 찾을 수 있습니다.
+
+---
+
+## 참고 자료
+- [데이콘 경진대회 페이지](https://dacon.io/competitions/official/236127/overview/description)
